@@ -1,144 +1,54 @@
-# Semana 1 – Variables y Tipos de Datos
+# Semana 1 – Variables, Tipos de Datos Estrictos y Operaciones de Bits
 
-## Teoría: ¿Qué es una variable en C++?
+¡Bienvenido/a a la primera semana de entrenamiento de **Low-Level Logic**!
 
-Una **variable** es un espacio con nombre en la memoria del computador que almacena un valor que puede cambiar durante la ejecución del programa.
-
-En C++ cada variable tiene un **tipo de dato** que le dice al compilador cuánta memoria reservar y qué clase de valores puede guardar. Los más básicos son:
-
-| Tipo    | Tamaño típico | Ejemplo de valor |
-|---------|---------------|------------------|
-| `int`   | 4 bytes       | `-3`, `0`, `42`  |
-| `float` | 4 bytes       | `3.14`, `-0.5`   |
-| `double`| 8 bytes       | `2.718281828`    |
-| `char`  | 1 byte        | `'A'`, `'z'`     |
-| `bool`  | 1 byte        | `true`, `false`  |
-
-### Declaración y asignación
-
-```cpp
-int edad = 20;      // declaración con inicialización
-float precio;       // declaración sin inicialización (valor indefinido)
-precio = 9.99f;     // asignación posterior
-```
-
-### Operaciones aritméticas básicas
-
-| Operador | Significado       | Ejemplo          |
-|----------|-------------------|------------------|
-| `+`      | Suma              | `a + b`          |
-| `-`      | Resta             | `a - b`          |
-| `*`      | Multiplicación    | `a * b`          |
-| `/`      | División          | `a / b`          |
-| `%`      | Módulo (resto)    | `a % b`          |
-
-> **Regla importante:** Cuando ambos operandos son `int`, la división `/` descarta la parte decimal. Para obtener decimales al menos uno de los dos debe ser `float` o `double`.
+Esta semana el objetivo es **romper la abstracción** de los lenguajes de alto nivel y el pseudocódigo, comprendiendo que los datos ocupan un espacio físico real y finito en la memoria de la máquina.
 
 ---
 
-## Reto 1 – El Intercambio de Variables
+## 📅 Estructura del Aprendizaje Diario
 
-### Descripción
+Hemos dividido esta semana en **7 días de entrenamiento intensivo**, con **5 retos prácticos por día** (un total de 35 desafíos). Cada día aborda un tema específico y avanza en complejidad:
 
-Escribe un programa en C++ que:
-
-1. Lea **dos números enteros** (`A` y `B`) desde la entrada estándar (`std::cin`).
-2. **Intercambie** sus valores: `A` debe tomar el valor original de `B` y `B` debe tomar el valor original de `A`.
-3. Imprima el resultado por consola en el siguiente formato exacto:
-
-```
-A=<nuevo_valor_de_A>
-B=<nuevo_valor_de_B>
-```
-
-**Ejemplo:**
-```
-Entrada: 5 10
-Salida:
-A=10
-B=5
-```
+1. **[Día 1: Enteros, Límites y Desbordamientos (Overflow)](./dia-1/README.md)**
+   * Temas: `short`, `int`, `long long`, desbordamiento por exceso y defecto.
+2. **[Día 2: Números de Punto Flotante y Precisión](./dia-2/README.md)**
+   * Temas: `float`, `double`, IEEE 754, infinitos y NaN, errores de redondeo acumulativos.
+3. **[Día 3: Caracteres, Booleanos y Tabla ASCII](./dia-3/README.md)**
+   * Temas: `char` como tipo numérico, conversiones de caso, compuertas lógicas y empaquetado inicial.
+4. **[Día 4: Operadores a Nivel de Bits Básicos](./dia-4/README.md)**
+   * Temas: Lógica binaria pura (`&`, `|`, `^`, `~`), intercambio sin temporal con XOR y Complemento a Dos.
+5. **[Día 5: Desplazamientos de Bits y Máscaras](./dia-5/README.md)**
+   * Temas: Multiplicación/división binaria (`<<`, `>>`), extracción de bits y máscaras en rangos $O(1)$.
+6. **[Día 6: Práctica Integrada de Bits y Tipos](./dia-6/README.md)**
+   * Temas: Bit packing (empaquetado de caracteres), simetrías binarias y adición lógica (Half-Adder).
+7. **[Día 7: El Gran Reto Semanal y Git Básico](./dia-7/README.md)**
+   * Temas: Contar bits encendidos, evaluar potencias de dos, rachas consecutivas y simular una ALU de 1 bit.
 
 ---
 
-### ⚠️ RESTRICCIÓN DE LÓGICA (obligatoria)
+## 🛠️ Cómo Trabajar en los Retos de Cada Día
 
-> Está **estrictamente prohibido** usar una tercera variable auxiliar (`temporal`, `aux`, `tmp`, o cualquier variable adicional).
->
-> El intercambio **debe resolverse únicamente con aritmética básica**: sumas y restas sobre las mismas dos variables `A` y `B`.
-
-Esto significa que tu solución no puede contener ninguna declaración de variable extra más allá de `int A` e `int B`.
-
----
-
-### 📚 Librerías permitidas
-
-Solo se permite incluir:
-
-```cpp
-#include <iostream>
-```
-
-Queda prohibido el uso de `<algorithm>`, `<utility>`, `std::swap()`, o cualquier función de la biblioteca estándar que haga el intercambio por ti.
-
----
-
-## Cómo Trabajar en este Reto
-
-### 1. Crea tu propia rama
-
-Desde la raíz del repositorio, crea una rama con tu nombre de usuario de GitHub:
-
-```bash
-git checkout -b soluciones/tu_usuario
-```
-
-### 2. Copia la plantilla a tu carpeta personal
-
-```bash
-# Situado en mes-1-logica/semana-1-variables/
-cp plantilla.cpp soluciones/tu_nombre.cpp
-```
-
-> La carpeta `soluciones/` ya está creada con un `.gitkeep`. Nunca modifiques `plantilla.cpp` directamente.
-
-### 3. Escribe tu solución
-
-Abre `soluciones/tu_nombre.cpp` en tu editor favorito y completa el código donde dice `// TU CÓDIGO AQUÍ`.
-
-### 4. Compila manualmente (opcional)
-
-```bash
-g++ -O2 -o mi_solucion soluciones/tu_nombre.cpp
-./mi_solucion
-```
-
-### 5. Ejecuta las pruebas automáticas
-
-```bash
-python3 test_logica.py soluciones/tu_nombre.cpp
-```
-
-Si todos los casos pasan verás:
-
-```
-[OK] Caso 1: A=5, B=10  ->  A=10, B=5
-[OK] Caso 2: A=-3, B=7  ->  A=7, B=-3
-[OK] Caso 3: A=0, B=0   ->  A=0, B=0
-[OK] Caso 4: A=100, B=-100 -> A=-100, B=100
-✅ ¡Todos los casos de prueba pasaron!
-```
-
-### 6. Sube tu solución con un Pull Request
-
-```bash
-git add soluciones/tu_nombre.cpp
-git commit -m "feat(semana-1): solución de tu_nombre para El Intercambio"
-git push origin soluciones/tu_usuario
-```
-
-Luego abre un Pull Request desde GitHub apuntando a `main`. Los revisores usarán el mismo script de pruebas para validarla.
+1. **Entra en el directorio del día en el que vas a trabajar**:
+   ```bash
+   cd mes-1-logica/semana-1-variables/dia-N/
+   ```
+2. **Lee la teoría y la descripción de los 5 retos** en el `README.md` de ese día.
+3. **Copia la plantilla** del reto que deseas resolver a la carpeta `soluciones/`:
+   ```bash
+   cp plantillas/reto_X.cpp soluciones/reto_X.cpp
+   ```
+4. **Escribe tu código** en `soluciones/reto_X.cpp` rellenando la sección `// TU CÓDIGO AQUÍ`.
+5. **Prueba tu solución** ejecutando el script de pruebas automatizadas:
+   ```bash
+   python3 test_dia_N.py X soluciones/reto_X.cpp
+   ```
+   O bien, prueba todas tus soluciones acumuladas del día con:
+   ```bash
+   python3 test_dia_N.py all
+   ```
+   *(Donde `N` es el número de día del 1 al 7 y `X` es el número de reto del 1 al 35).*
 
 ---
 
-> 💡 **Tip:** Si tu programa compila pero los números no se intercambian correctamente, revisa el orden de las operaciones. La aritmética tiene un orden lógico que debes respetar.
+> 💡 **Consejo:** No te saltes ningún día. Aunque los primeros retos parezcan sencillos, están diseñados para asentar las bases mecánicas y lógicas que necesitarás para abordar los operadores de bits y el gran reto del Día 7. ¡Mucho éxito!

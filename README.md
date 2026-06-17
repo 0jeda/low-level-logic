@@ -1,52 +1,110 @@
 # 🧠 Low-Level Logic: Reinicio de Fundamentos y Pensamiento Algorítmico
 
-¡Bienvenido/a a **Low-Level Logic**! 
-
-Este repositorio es un espacio de entrenamiento autónomo, intensivo y de código abierto diseñado para **romper los vicios de la academia tradicional y aprender a programar de verdad**. Si sientes que los planes de estudio universitarios se quedan en la superficie o abusan del pseudocódigo sin enseñarte el impacto real de tus decisiones en la máquina, este proyecto es para ti.
-
-Aquí nos enfocamos en desarrollar el músculo del pensamiento lógico puro y duro utilizando **C/C++** como lenguaje base y **Python** como herramienta de automatización para pruebas locales.
+> **¡Bienvenido/a al gimnasio mental de la lógica de bajo nivel!** Este repositorio es un espacio de entrenamiento autónomo, intensivo y de código abierto diseñado para **romper los vicios de la academia tradicional y aprender a programar de verdad**, entendiendo el impacto real de cada línea de código en la memoria y la CPU.
 
 ---
 
-##  Filosofía del Proyecto
+## ⚡ Filosofía del Entrenamiento
 
-* **Sin ruedas de entrenamiento:** Está estrictamente prohibido el uso de librerías avanzadas o métodos mágicos de alto nivel (como `std::sort`, estructuras dinámicas automatizadas, etc.). Todo se construye desde cero (bucles, control de flujo, algoritmos de ordenamiento a mano).
-* **Git desde el primer día:** No subimos archivos sueltos. Cada reto se resuelve en una rama independiente y se integra mediante un flujo real de *Pull Requests*.
-* **Criterio de Eficiencia:** No basta con que el código "corra". Aprendemos a evaluar el impacto en memoria y tiempo de ejecución usando **Notación Big O** (Complejidad Algorítmica).
-* **Automatización Profesional:** Cada reto cuenta con un script de prueba en Python (`test_logica.py`) que compila tu código con `g++` y valida la solución localmente con múltiples casos de prueba antes de que envíes tu revisión.
-
----
-
-## Mapa de Ruta (Roadmap de 2 Meses)
-
-###  Mes 1: El Control Absoluto de la Lógica y la Eficiencia
-* **Semana 1: Variables y Control de Flujo Básico** * El impacto de la asignación en memoria y operaciones aritméticas puras sin variables auxiliares.
-* **Semana 2: Arreglos Lineales y Complejidad Algorítmica (Big O)**
-  * Búsqueda Lineal vs. Búsqueda Binaria. Aprendiendo a medir la eficiencia en tiempo $O(\log n)$.
-* **Semana 3: Matrices (2D) y Algoritmos de Ordenamiento Puro**
-  * Movimiento de datos multidimensionales e implementación a mano de *Bubble Sort* o *Insertion Sort*.
-* **Semana 4: Modularidad Extrema y Control del Call Stack**
-  * Funciones puras y el uso estricto de paso de parámetros por referencia (`&`) para el control de memoria.
-
-###  Mes 2: Abstracción, Estructuras y Recursividad
-* **Semana 5: Modelado de Datos con Estructuras (`struct`)**
-  * Agrupación de tipos de datos primitivos para resolver problemas del mundo real.
-* **Semana 6: Pensamiento Inductivo y Recursividad Lineal**
-  * Rompiendo la dependencia de los bucles cíclicos. El control del *Stack Overflow*.
-* **Semana 7: Recursividad Avanzada y Optimización**
-  * Estrategia de Divide y Vencerás mediante la implementación de *Merge Sort*.
-* **Semana 8: Proyecto Integrador de Fin de Curso**
-  * Desarrollo de un motor de búsqueda de texto básico en consola con Big O optimizado.
+* 🚫 **Sin Ruedas de Entrenamiento:** Está estrictamente prohibido el uso de librerías avanzadas o métodos de alto nivel (como `std::sort`, vectores dinámicos automáticos, etc.). Todo se construye desde los fundamentos físicos (bucles, punteros, operaciones de bits y aritmética de direcciones a mano).
+* 🔄 **Git desde el Primer Segundo:** No subimos archivos sueltos. Cada reto se resuelve en una rama independiente y se integra mediante un flujo real de *Pull Requests*.
+* 📏 **Criterio de Eficiencia (Big O):** No basta con que el código "corra". Evaluamos y justificamos la complejidad temporal y espacial en Notación Big O.
+* 🧪 **Automatización Profesional:** Cada día de retos cuenta con un script de prueba en Python (`test_dia_N.py`) que compila tu código con `g++ -O2` y valida la solución localmente con múltiples casos extremos de prueba antes de enviar tu PR.
 
 ---
 
-##  ¿Cómo empezar a resolver los retos? (Flujo de Trabajo Abierto)
+## 🗺️ Mapa de Ruta (Roadmap de 2 Meses)
 
-Para mantener el repositorio limpio y permitir que múltiples usuarios resuelvan los retos al mismo tiempo sin pisarse el código, seguimos un flujo estricto de Git:
+```mermaid
+graph TD
+    M1[<b>MES 1</b><br>El Control Absoluto de la Lógica y la Eficiencia] --> W1(Semana 1: Datos Estrictos, Desbordamiento y Bits)
+    M1 --> W2(Semana 2: Complejidad Algorítmica y Arreglos Lineales)
+    M1 --> W3(Semana 3: Matrices y Ordenamientos Básicos)
+    M1 --> W4(Semana 4: Modularidad y Pila de Llamadas)
 
-### 1. Clonar el repositorio y crear una rama propia
-Nunca trabajes directamente sobre la rama `main`. Clona el proyecto y crea una rama con tu nombre y el reto de la semana:
+    M2[<b>MES 2</b><br>Abstracción, Estructuras y Recursividad] --> W5(Semana 5: Modelado de Datos con struct)
+    M2 --> W6(Semana 6: Pensamiento Inductivo y Recursividad)
+    M2 --> W7(Semana 7: Divide y Vencerás - Merge Sort)
+    M2 --> W8(Semana 8: Proyecto Integrador)
+    
+    style M1 fill:#3a0ca3,stroke:#7209b7,stroke-width:2px,color:#fff
+    style M2 fill:#03071e,stroke:#370617,stroke-width:2px,color:#fff
+    style W1 fill:#4895ef,stroke:#4cc9f0,color:#000
+    style W2 fill:#4895ef,stroke:#4cc9f0,color:#000
+    style W3 fill:#4895ef,stroke:#4cc9f0,color:#000
+    style W4 fill:#4895ef,stroke:#4cc9f0,color:#000
+    style W5 fill:#f72585,stroke:#b5179e,color:#fff
+    style W6 fill:#f72585,stroke:#b5179e,color:#fff
+    style W7 fill:#f72585,stroke:#b5179e,color:#fff
+    style W8 fill:#f72585,stroke:#b5179e,color:#fff
+```
+
+---
+
+## 📅 Estructura de Trabajo Diaria
+
+Para evitar la sobrecarga de información y asegurar un aprendizaje progresivo, cada semana se organiza en **7 días independientes** con **5 retos de código por día** (35 retos semanales en total):
+
+```text
+📂 mes-1-logica/
+ └── 📂 semana-1-variables/
+      ├── 📄 README.md  (Introducción de la semana)
+      ├── 📂 dia-1/
+      │    ├── 📄 README.md  (Teoría y Retos del Día 1)
+      │    ├── 📄 test_dia_1.py  (Validador automático)
+      │    ├── 📂 plantillas/  (Retos 1 al 5 vacíos)
+      │    └── 📂 soluciones/  (Tus soluciones resueltas)
+      ├── 📂 dia-2/ ...
+```
+
+---
+
+## 🛠️ Flujo de Trabajo Profesional (Paso a Paso)
+
+Para resolver los retos, sigue estrictamente este flujo de Git y Consola:
+
+### 1. Preparar tu Entorno local
+Clona el repositorio y crea una rama independiente para trabajar en los retos de la semana actual:
 ```bash
-git clone [https://github.com/TU_USUARIO/low-level-logic.git](https://github.com/TU_USUARIO/low-level-logic.git)
+git clone https://github.com/TU_USUARIO/low-level-logic.git
 cd low-level-logic
-git checkout -b solucion/semana-1-tu-nombre
+git checkout -b solucion/semana-X-tu-nombre
+```
+
+### 2. Seleccionar y Resolver un Reto
+1. Ve al directorio del día en el que estás trabajando (por ejemplo, Semana 1, Día 1):
+   ```bash
+   cd mes-1-logica/semana-1-variables/dia-1/
+   ```
+2. Copia la plantilla del reto a la carpeta `soluciones/` para no modificar la plantilla original:
+   ```bash
+   cp plantillas/reto_1.cpp soluciones/reto_1.cpp
+   ```
+3. Abre `soluciones/reto_1.cpp` en tu editor de código y completa la lógica correspondiente dentro de la sección indicada.
+
+### 3. Validar con Pruebas Automatizadas
+Ejecuta el script validador en Python pasando la ruta del archivo que modificaste:
+```bash
+python3 test_dia_1.py soluciones/reto_1.cpp
+```
+Si tu código es correcto y maneja todos los casos límite, verás un mensaje de éxito. También puedes probar todo lo que lleves resuelto en el día con:
+```bash
+python3 test_dia_1.py all
+```
+
+> [!IMPORTANT]
+> Los scripts de prueba validan casos extremos (valores máximos, mínimos, arreglos vacíos o desordenados) para asegurar que el código sea verdaderamente robusto y no solo compile.
+
+### 4. Enviar tu Solución
+Una vez completes los retos de la semana, sube tus cambios y abre un Pull Request:
+```bash
+git add .
+git commit -m "feat(semana-X): resolver retos del día 1 al 7"
+git push origin solucion/semana-X-tu-nombre
+```
+Luego, ve a GitHub y abre el Pull Request (PR) hacia la rama `main` explicando tu solución y justificando las complejidades Big O cuando se requiera.
+
+---
+
+> [!TIP]
+> **Aprender duele un poco:** Si una prueba falla, lee detalladamente la salida del script `test_dia_N.py`. Te dirá exactamente qué entrada causó el fallo y qué valor devolvió tu programa frente al valor esperado. ¡Usa esto para rastrear y depurar tu lógica!

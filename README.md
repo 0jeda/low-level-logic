@@ -1,6 +1,6 @@
 # 🧠 Low-Level Logic: Reinicio de Fundamentos y Pensamiento Algorítmico
 
-¡Bienvenido/a a **Low-Level Logic**! 🚀
+¡Bienvenido/a a **Low-Level Logic**! 
 
 Este repositorio es un espacio de entrenamiento autónomo, intensivo y de código abierto diseñado para **romper los vicios de la academia tradicional y aprender a programar de verdad**. Si sientes que los planes de estudio universitarios se quedan en la superficie o abusan del pseudocódigo sin enseñarte el impacto real de tus decisiones en la máquina, este proyecto es para ti.
 
@@ -8,7 +8,7 @@ Aquí nos enfocamos en desarrollar el músculo del pensamiento lógico puro y du
 
 ---
 
-## 🎯 Filosofía del Proyecto
+##  Filosofía del Proyecto
 
 * **Sin ruedas de entrenamiento:** Está estrictamente prohibido el uso de librerías avanzadas o métodos mágicos de alto nivel (como `std::sort`, estructuras dinámicas automatizadas, etc.). Todo se construye desde cero (bucles, control de flujo, algoritmos de ordenamiento a mano).
 * **Git desde el primer día:** No subimos archivos sueltos. Cada reto se resuelve en una rama independiente y se integra mediante un flujo real de *Pull Requests*.
